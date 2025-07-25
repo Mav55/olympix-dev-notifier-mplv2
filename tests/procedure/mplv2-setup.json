@@ -1,0 +1,77 @@
+{
+    "version": "1.0",
+    "chainId": "1",
+    "createdAt": 1692299812010,
+    "meta": {
+        "name": "Transactions Batch",
+        "description": "",
+        "txBuilderVersion": "1.16.1",
+        "createdFromSafeAddress": "0xd6d4Bcde6c816F17889f1Dd3000aF0261B03a196",
+        "createdFromOwnerAddress": "",
+        "checksum": "0xc310a1e1d1891d142c8d9f725e066ce979e8a2d31adbc63ad60706b007d15e63"
+    },
+    "transactions": [
+        {
+            "to": "0x804a6F5F667170F545Bf14e5DDB48C70B788390C",
+            "value": "0",
+            "data": null,
+            "contractMethod": {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "contract_",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "bytes32",
+                        "name": "functionId_",
+                        "type": "bytes32"
+                    },
+                    {
+                        "internalType": "bytes",
+                        "name": "callData_",
+                        "type": "bytes"
+                    }
+                ],
+                "name": "scheduleCall",
+                "payable": false
+            },
+            "contractInputsValues": {
+                "contract_": "0x643C4E15d7d62Ad0aBeC4a9BD4b001aA3Ef52d66",
+                "functionId_": "0x4d543a4144445f4d4f44554c4500000000000000000000000000000000000000",
+                "callData_": "0x1ed86f190000000000000000000000005dfe0460f66fa06bfcbb3211e723556be6b3f69d"
+            }
+        },
+        {
+            "to": "0x804a6F5F667170F545Bf14e5DDB48C70B788390C",
+            "value": "0",
+            "data": null,
+            "contractMethod": {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "contract_",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "bytes32",
+                        "name": "functionId_",
+                        "type": "bytes32"
+                    },
+                    {
+                        "internalType": "bytes",
+                        "name": "callData_",
+                        "type": "bytes"
+                    }
+                ],
+                "name": "scheduleCall",
+                "payable": false
+            },
+            "contractInputsValues": {
+                "contract_": "0x5dfe0460f66fa06bFCbB3211e723556be6B3f69D",
+                "functionId_": "0x524d3a5343484544554c45000000000000000000000000000000000000000000",
+                "callData_": "0xc113b581000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000030000000000000000000000000000000000000000000000000000000066fb73c0000000000000000000000000000000000000000000000000000000006774bdc0000000000000000000000000000000000000000000000000000000006955f140000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000018df83aa44fd2ae00000000000000000000000000000000000000000000000001a363df60bf1e1ec0000000000000000000000000000000000000000000000000000000000000000"
+            }
+        }
+    ]
+}
