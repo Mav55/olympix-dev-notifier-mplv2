@@ -1,0 +1,27 @@
+name: Upload Olympix Security Results
+on:
+  # Run when SARIF files are pushed
+  push:
+    paths:
+      - 'olympix.sarif'
+      - 'security-results/*.sarif'
+  # Allow manual runs
+  workflow_dispatch:
+
+jobs:
+  upload-sarif:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Upload SARIF file to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: olympix.sarif
+        if: hashFiles('olympix.sarif') != ''
+        
+      - name: Upload SARIF files from security-results directory
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: security-results/
+        if: hashFiles('security-results/*.sarif') != ''

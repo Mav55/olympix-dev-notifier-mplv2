@@ -1,0 +1,427 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Olympix Integrated Security",
+          "rules": [
+            {
+              "id": "call-without-gas-budget",
+              "fullDescription": {
+                "text": "Making an external call without a gas budget may consume all of the transaction\u0027s gas, causing it to revert."
+              },
+              "properties": {
+                "security-severity": "1",
+                "precision": "medium"
+              }
+            },
+            {
+              "id": "reentrancy",
+              "fullDescription": {
+                "text": "Modifying state after making an external call may allow for reentrancy attacks."
+              },
+              "properties": {
+                "security-severity": "10",
+                "precision": "medium"
+              }
+            },
+            {
+              "id": "unused-return-function-call",
+              "fullDescription": {
+                "text": "Calling a function without checking the return value may lead to silent failures."
+              },
+              "properties": {
+                "security-severity": "5",
+                "precision": "medium"
+              }
+            },
+            {
+              "id": "reentrancy-events",
+              "fullDescription": {
+                "text": "Reentrant functions which emit events after making an external call may lead to out-of-order events."
+              },
+              "properties": {
+                "security-severity": "1",
+                "precision": "medium"
+              }
+            },
+            {
+              "id": "unsafe-downcast",
+              "fullDescription": {
+                "text": "Performing a narrowing downcast may result in silent overflow due to bit truncation."
+              },
+              "properties": {
+                "security-severity": "1",
+                "precision": "medium"
+              }
+            },
+            {
+              "id": "no-parameter-validation-in-constructor",
+              "fullDescription": {
+                "text": "Parameters passed to a constructor that are not validated for correct values may lead to contract creation in an undesired state."
+              },
+              "properties": {
+                "security-severity": "1",
+                "precision": "medium"
+              }
+            },
+            {
+              "id": "low-level-call-params-verified",
+              "fullDescription": {
+                "text": "The contract uses low-level calls without properly verifying the input parameters, potentially leading to unexpected behavior or vulnerabilities."
+              },
+              "properties": {
+                "security-severity": "5",
+                "precision": "medium"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "call-without-gas-budget",
+          "level": "error",
+          "message": {
+            "text": "Making an external call without a gas budget may consume all of the transaction\u0027s gas, causing it to revert. For more information, visit: http://detectors.olympixdevsectools.com/article/web3-vulnerability/call-without-gas-budget"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contracts/MapleTokenProxy.sol"
+                },
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 30
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "reentrancy",
+          "level": "error",
+          "message": {
+            "text": "Modifying state after making an external call may allow for reentrancy attacks. For more information, visit: http://detectors.olympixdevsectools.com/article/web3-vulnerability/reentrancy"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contracts/MapleTokenProxy.sol"
+                },
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 5
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "unused-return-function-call",
+          "level": "error",
+          "message": {
+            "text": "Calling a function without checking the return value may lead to silent failures. For more information, visit: http://detectors.olympixdevsectools.com/article/web3-vulnerability/unused-return-function-call"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contracts/RecapitalizationModule.sol"
+                },
+                "region": {
+                  "startLine": 146,
+                  "startColumn": 34
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "reentrancy-events",
+          "level": "error",
+          "message": {
+            "text": "Reentrant functions which emit events after making an external call may lead to out-of-order events. For more information, visit: http://detectors.olympixdevsectools.com/article/web3-vulnerability/reentrancy-events"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contracts/MapleTokenProxy.sol"
+                },
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 5
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "unsafe-downcast",
+          "level": "error",
+          "message": {
+            "text": "Performing a narrowing downcast may result in silent overflow due to bit truncation. For more information, visit: http://detectors.olympixdevsectools.com/article/web3-vulnerability/unsafe-downcast"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contracts/MapleToken.sol"
+                },
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 53
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "unsafe-downcast",
+          "level": "error",
+          "message": {
+            "text": "Performing a narrowing downcast may result in silent overflow due to bit truncation. For more information, visit: http://detectors.olympixdevsectools.com/article/web3-vulnerability/unsafe-downcast"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contracts/MapleToken.sol"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 53
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "unsafe-downcast",
+          "level": "error",
+          "message": {
+            "text": "Performing a narrowing downcast may result in silent overflow due to bit truncation. For more information, visit: http://detectors.olympixdevsectools.com/article/web3-vulnerability/unsafe-downcast"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contracts/MapleTokenProxy.sol"
+                },
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 53
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "unsafe-downcast",
+          "level": "error",
+          "message": {
+            "text": "Performing a narrowing downcast may result in silent overflow due to bit truncation. For more information, visit: http://detectors.olympixdevsectools.com/article/web3-vulnerability/unsafe-downcast"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contracts/MapleTokenProxy.sol"
+                },
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 53
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "unsafe-downcast",
+          "level": "error",
+          "message": {
+            "text": "Performing a narrowing downcast may result in silent overflow due to bit truncation. For more information, visit: http://detectors.olympixdevsectools.com/article/web3-vulnerability/unsafe-downcast"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contracts/RecapitalizationModule.sol"
+                },
+                "region": {
+                  "startLine": 119,
+                  "startColumn": 34
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-parameter-validation-in-constructor",
+          "level": "error",
+          "message": {
+            "text": "Parameters passed to a constructor that are not validated for correct values may lead to contract creation in an undesired state. For more information, visit: http://detectors.olympixdevsectools.com/article/web3-vulnerability/no-parameter-validation-in-constructor"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contracts/EmergencyModule.sol"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 17
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-parameter-validation-in-constructor",
+          "level": "error",
+          "message": {
+            "text": "Parameters passed to a constructor that are not validated for correct values may lead to contract creation in an undesired state. For more information, visit: http://detectors.olympixdevsectools.com/article/web3-vulnerability/no-parameter-validation-in-constructor"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contracts/EmergencyModule.sol"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 35
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-parameter-validation-in-constructor",
+          "level": "error",
+          "message": {
+            "text": "Parameters passed to a constructor that are not validated for correct values may lead to contract creation in an undesired state. For more information, visit: http://detectors.olympixdevsectools.com/article/web3-vulnerability/no-parameter-validation-in-constructor"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contracts/MapleTokenProxy.sol"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 17
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-parameter-validation-in-constructor",
+          "level": "error",
+          "message": {
+            "text": "Parameters passed to a constructor that are not validated for correct values may lead to contract creation in an undesired state. For more information, visit: http://detectors.olympixdevsectools.com/article/web3-vulnerability/no-parameter-validation-in-constructor"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contracts/MapleTokenProxy.sol"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 35
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-parameter-validation-in-constructor",
+          "level": "error",
+          "message": {
+            "text": "Parameters passed to a constructor that are not validated for correct values may lead to contract creation in an undesired state. For more information, visit: http://detectors.olympixdevsectools.com/article/web3-vulnerability/no-parameter-validation-in-constructor"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contracts/MapleTokenProxy.sol"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 60
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-parameter-validation-in-constructor",
+          "level": "error",
+          "message": {
+            "text": "Parameters passed to a constructor that are not validated for correct values may lead to contract creation in an undesired state. For more information, visit: http://detectors.olympixdevsectools.com/article/web3-vulnerability/no-parameter-validation-in-constructor"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contracts/MapleTokenProxy.sol"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 82
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-parameter-validation-in-constructor",
+          "level": "error",
+          "message": {
+            "text": "Parameters passed to a constructor that are not validated for correct values may lead to contract creation in an undesired state. For more information, visit: http://detectors.olympixdevsectools.com/article/web3-vulnerability/no-parameter-validation-in-constructor"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contracts/RecapitalizationModule.sol"
+                },
+                "region": {
+                  "startLine": 58,
+                  "startColumn": 17
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "low-level-call-params-verified",
+          "level": "error",
+          "message": {
+            "text": "The contract uses low-level calls without properly verifying the input parameters, potentially leading to unexpected behavior or vulnerabilities. For more information, visit: http://detectors.olympixdevsectools.com/article/web3-vulnerability/low-level-call-params-verified"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "contracts/MapleTokenProxy.sol"
+                },
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 30
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
